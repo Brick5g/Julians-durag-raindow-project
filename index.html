@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julian's Durag Collection</title>
+  <script defer src="index.js"></script>
+</head>
+  
+
+<h1>Julian's Durag Collection</h1>
+
+<div id="main-layout" style="display: flex; gap: 40px; align-items: flex-start;">
+  
+  <div id="left-side" style="flex: 1;">
+    <form id="durag-form">
+      <input id="color-input" type="text" placeholder="Enter a durag color..." required>
+      <input id="image-input" type="text" placeholder="Enter image URL..." required>
+      <button type="submit">Add Durag</button>
+    </form>
+
+    <div id="durag-container" style="display: flex; gap: 15px; overflow-x: auto; padding: 10px 0; white-space: nowrap;">
+    </div>
+  </div>
+
+  
+  <div id="right-side" style="width: 300px; border-left: 2px solid #ccc; padding-left: 20px;">
+    <h3>The Collection so far!</h3>
+    <div id="preview-box" style="width: 250px; height: 250px; border: 2px dashed #aaa; display: flex; align-items: center; justify-content: center;">
+      <p id="preview-placeholder">Hover over a color!</p>
+      <img id="preview-image" src="" alt="Julian Preview" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+
+</div>
