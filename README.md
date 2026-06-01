@@ -1,7 +1,7 @@
-### Julians-durag-raindow-project
+# Julians-durag-raindow-project
 Javascript final project for phase 1
 
-# As a user, I want to be able to add different colored durags to the collection to help Julian complete his rainbow of durags for his collection (clearly he's got some missing) Help the man get some new colors and comment and like which ones you prefer the most!
+## As a user, I want to be able to add different colored durags to the collection to help Julian complete his rainbow of durags for his collection (clearly he's got some missing) Help the man get some new colors and comment and like which ones you prefer the most!
 
 ## Core Features:
 
