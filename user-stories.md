@@ -4,11 +4,11 @@
 
 ## Feature 1 - Add images of different color durags to the collection
 
-### User story: As a user, you should be able to type out the color of the durag you are adding and copy the image address to the line below. The app should Send a POST request, add the new durag to db.json, then immediately render on the new page. This will input that into the database.
+### User story: As a user, you should be able to type out the color of the durag you are adding and copy the image address to the line below. The app should Send a POST request, add the new durag to db.json. 
 
 ## Feature 2 - Display collection
 
-### User story: As a user, I want to see all durags currently in the collection so that I can browse different colors. When the page loads: It fetches all durags, render each durag as a "card", display the image & color.
+### User story: As a user, I want to see all durags currently in the collection so that I can browse different colors. Then immediately render on the new page. This will input that into the database. When the page loads: It fetches all durags, render each durag as a "card", display the image & color. 
 
 ## Feature 3 - Comment System
 
@@ -21,4 +21,8 @@
 ## Feature 5 - Like a Durag
 
 ### User Story: As a user, I want to like a durag so that I can show which colors I prefer.
+
+## Feature 6 - Scrolling 
+
+### Will also implement a scroll function just in case someone wants to upload 100 photos at once. Instead of infinite scrolling up and down, we can scroll left & right to see what others have added already.
 
