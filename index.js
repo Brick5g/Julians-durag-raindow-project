@@ -48,11 +48,16 @@ function renderDuragCard(durag) {
   const card = document.createElement('div');
   card.className = 'durag-card';
 
+  card.style.display = 'inline-block';
+  card.style.verticalAlign = 'top'; 
   card.style.border = '1px solid #ccc';
   card.style.padding = '10px';
+  card.style.margin = '10px';
   card.style.borderRadius = '6px';
   card.style.textAlign = 'center';
   card.style.backgroundColor = '#f9f9f9';
+  card.style.minWidth = '160px';  
+  card.style.maxWidth = '160px';  
 
   const img = document.createElement('img');
   img.src = durag.imageUrl || durag.image;
@@ -61,7 +66,7 @@ function renderDuragCard(durag) {
   img.style.height = '120px';
   img.style.objectFit = 'cover';
   img.style.display = 'block';
-  img.style.margin = '0 auto 8px';
+  img.style.margin = '0 auto 6px auto';
 
   const colorLabel = document.createElement('p');
   colorLabel.textContent = durag.color || 'No Color Specified';
@@ -71,6 +76,53 @@ function renderDuragCard(durag) {
   card.appendChild(img);
   card.appendChild(colorLabel);
 
+  const commentList = document.createElement('ul');
+  commentList.style.listStyleType = 'none';
+  commentList.style.padding = '0';
+  commentList.style.marginTop = '10px';
+  commentList.style.textAlign = 'left';
+  commentList.style.fontSize = '12px';
+
+  const commentForm = document.createElement('form');
+  commentForm.style.marginTop = '8px';
+
+  const commentInput = document.createElement('input');
+  commentInput.type = 'text';
+  commentInput.placeholder = 'Add a comment...';
+  commentInput.style.width = '90%';
+  commentInput.style.padding = '6px';
+  commentInput.style.fontSize = '12px';
+  commentInput.style.display = 'block';
+  commentInput.style.margin = '0 auto 6px auto';
+  commentInput.required = true;
+
+  const commentSubmitButton = document.createElement('button');
+  commentSubmitButton.type = 'submit';
+  commentSubmitButton.textContent = 'Submit';
+  commentSubmitButton.style.padding = '4px 10px';
+  commentSubmitButton.style.fontSize = '12px';
+  commentSubmitButton.style.marginLeft = '4px';
+  commentSubmitButton.style.cursor = 'pointer';
+
+  commentForm.appendChild(commentInput);
+  commentForm.appendChild(commentSubmitButton);
+  
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const newCommentItem = document.createElement('li');
+    newCommentItem.textContent = `${commentInput.value}`;
+    newCommentItem.style.wordBreak = 'break-word';
+    newCommentItem.style.marginTop = '4px';
+    
+    commentList.appendChild(newCommentItem);
+
+    commentForm.reset();
+  });
+
+  card.appendChild(commentForm);
+  card.appendChild(commentList);
+  
   duragContainer.appendChild(card);
 }
 
