@@ -13,16 +13,16 @@ duragForm.addEventListener('submit', function (event) {
   const newDurag = {
     color,
     imageUrl
-    };
+  };
 
   fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
-      },
-        body: JSON.stringify(newDurag)
-    })
+    },
+      body: JSON.stringify(newDurag)
+  })
     .then(response => response.json())
     .then(savedDurag => {
       console.log('Durag saved:', savedDurag);
@@ -39,11 +39,9 @@ function fetchDurags() {
     .then(duragsArray => {
       duragContainer.replaceChildren();
       duragsArray.forEach(durag => {
-      renderDuragCard(durag);
+        renderDuragCard(durag);
       }); 
-    }) 
-
-    .catch(error => console.error('Error fetching durags:', error));
+    }).catch(error => console.error('Error fetching durags:', error));
 }
 
 function renderDuragCard(durag) {
