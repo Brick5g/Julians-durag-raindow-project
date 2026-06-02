@@ -68,6 +68,26 @@ function renderDuragCard(durag) {
   img.style.display = 'block';
   img.style.margin = '0 auto 6px auto';
 
+  let likeCount = 0;
+  const likeButton = document.createElement('button');
+  likeButton.textContent = `❤️ (${likeCount})`;
+  likeButton.style.padding = '4px 10px';
+  likeButton.style.fontSize = '12px';
+  likeButton.style.cursor = 'pointer';
+  likeButton.style.display = 'block';
+  likeButton.style.margin = '8px auto';
+  likeButton.borderRadius = '4px';
+  likeButton.style.border = '1px solid #bbb';
+  likeButton.style.backgroundColor = '#fff';
+
+  likeButton.addEventListener('click', function () {
+    likeCount++;
+    likeButton.textContent = `❤️ (${likeCount})`;
+  });
+
+  card.appendChild(img);
+  card.appendChild(likeButton);
+
   const colorLabel = document.createElement('p');
   colorLabel.textContent = durag.color || 'No Color Specified';
   colorLabel.style.fontWeight = 'bold';
