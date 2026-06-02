@@ -48,8 +48,7 @@ function renderDuragCard(durag) {
   const card = document.createElement('div');
   card.className = 'durag-card';
 
-  card.style.display = 'inline-block';
-  card.style.verticalAlign = 'top'; 
+  card.style.flexShrink = '0';
   card.style.border = '1px solid #ccc';
   card.style.padding = '10px';
   card.style.margin = '10px';
