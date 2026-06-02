@@ -18,8 +18,8 @@ duragForm.addEventListener('submit', function (event) {
   fetch(API_URL, {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
       },
         body: JSON.stringify(newDurag)
     })
@@ -40,7 +40,7 @@ function fetchDurags() {
       duragContainer.replaceChildren();
       duragsArray.forEach(durag => {
       renderDuragCard(durag);
-        }); 
+      }); 
     }) 
 
     .catch(error => console.error('Error fetching durags:', error));
