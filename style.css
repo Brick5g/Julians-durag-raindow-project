@@ -1,0 +1,29 @@
+body {
+    background-color: #4d6851 !important;
+    color: #ffffff !important;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.durag-card, .durag-card p, .durag-card strong {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important; 
+}
+
+.color-wheel-btn {
+    padding: 8px 14px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 20px; /* Makes them rounded pills */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.color-wheel-btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+

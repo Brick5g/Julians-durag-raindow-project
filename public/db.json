@@ -1,0 +1,53 @@
+{
+  "durags": [
+    {
+      "id": "1",
+      "name": "Orange Durag",
+      "color": "Orange",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4721.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Blue Durag",
+      "color": "Blue",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4722.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Pink Durag",
+      "color": "Pink",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4723.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Purple Durag",
+      "color": "Purple",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4724.jpg"
+    },
+    {
+      "id": "5",
+      "name": "White Durag",
+      "color": "White",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4725.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Blue Green Durag",
+      "color": "Blue Green",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4726.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Red Durag",
+      "color": "Red",
+      "image": "https://example.com",
+      "selfie": "http://localhost:3000/images/IMG_4727.jpg"
+    }
+  ]
+}

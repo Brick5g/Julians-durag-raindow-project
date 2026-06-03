@@ -5,67 +5,52 @@ const colorInput = document.getElementById('color-input');
 const imageInput = document.getElementById('image-input');
 const duragContainer = document.getElementById('durag-container');
 
-duragForm.addEventListener('submit', function (event) {
+duragForm.addEventListener('submit', function(event) {
   event.preventDefault();
-  const color = colorInput.value;
-  const imageUrl = imageInput.value;
 
   const newDurag = {
-    color,
-    imageUrl
-  };
+    color: colorInput.value,
+    imageUrl: imageInput.value,
+    name: `${colorInput.value} Durag`
+    };
 
-  fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
+    fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+        },
       body: JSON.stringify(newDurag)
-  })
+    })
     .then(response => response.json())
     .then(savedDurag => {
-      console.log('Durag saved:', savedDurag);
+      renderUserGalleryCard(savedDurag);
       duragForm.reset();
     })
-    .catch(error => {
-      console.error('Error saving durag:', error);
-    });
+    .catch(error => console.error('Error saving durag:', error));
 });
 
-function fetchDurags() {
-  fetch(API_URL)
-    .then(response => response.json())
-    .then(duragsArray => {
-      duragContainer.replaceChildren();
-      duragsArray.forEach(durag => {
-        renderDuragCard(durag);
-      }); 
-    }).catch(error => console.error('Error fetching durags:', error));
-}
-
-function renderDuragCard(durag) {
+function renderUserGalleryCard(durag) {
   const card = document.createElement('div');
   card.className = 'durag-card';
-
   card.style.flexShrink = '0';
-  card.style.border = '1px solid #ccc';
+  card.style.border = '1px solid #444';
   card.style.padding = '10px';
-  card.style.margin = '10px';
   card.style.borderRadius = '6px';
   card.style.textAlign = 'center';
-  card.style.backgroundColor = '#f9f9f9';
+  card.style.backgroundColor = '#2d2d2d';
   card.style.minWidth = '160px';  
   card.style.maxWidth = '160px';  
 
   const img = document.createElement('img');
   img.src = durag.imageUrl || durag.image;
-  img.alt = `${durag.color} || 'Unknown Color'} Durag`;
+  img.alt = `${durag.color} Card`;
   img.style.width = '120px';
   img.style.height = '120px';
   img.style.objectFit = 'cover';
   img.style.display = 'block';
-  img.style.margin = '0 auto 6px auto';
+  img.style.margin = '0 auto 8px';
+  card.appendChild(img);
 
   let likeCount = 0;
   const likeButton = document.createElement('button');
@@ -75,25 +60,22 @@ function renderDuragCard(durag) {
   likeButton.style.cursor = 'pointer';
   likeButton.style.display = 'block';
   likeButton.style.margin = '8px auto';
-  likeButton.borderRadius = '4px';
+  likeButton.style.borderRadius = '4px';
   likeButton.style.border = '1px solid #bbb';
   likeButton.style.backgroundColor = '#fff';
 
-  likeButton.addEventListener('click', function () {
+  likeButton.addEventListener('click', function() {
     likeCount++;
     likeButton.textContent = `❤️ (${likeCount})`;
-  });
+    });
+    card.appendChild(likeButton);
 
-  card.appendChild(img);
-  card.appendChild(likeButton);
-
-  const colorLabel = document.createElement('p');
-  colorLabel.textContent = durag.color || 'No Color Specified';
-  colorLabel.style.fontWeight = 'bold';
-  colorLabel.style.margin = '0';
-
-  card.appendChild(img);
-  card.appendChild(colorLabel);
+  const label = document.createElement('p');
+  label.textContent = durag.color;
+  label.style.fontWeight = 'bold';
+  label.style.color = '#ffffff'; 
+  label.style.margin = '0';
+  card.appendChild(label);
 
   const commentList = document.createElement('ul');
   commentList.style.listStyleType = 'none';
@@ -101,6 +83,7 @@ function renderDuragCard(durag) {
   commentList.style.marginTop = '10px';
   commentList.style.textAlign = 'left';
   commentList.style.fontSize = '12px';
+  commentList.style.color = '#ffffff';
 
   const commentForm = document.createElement('form');
   commentForm.style.marginTop = '8px';
@@ -113,6 +96,9 @@ function renderDuragCard(durag) {
   commentInput.style.fontSize = '12px';
   commentInput.style.display = 'block';
   commentInput.style.margin = '0 auto 6px auto';
+  commentInput.style.backgroundColor = '#333';
+  commentInput.style.color = '#fff';
+  commentInput.style.border = '1px solid #555';
   commentInput.required = true;
 
   const commentSubmitButton = document.createElement('button');
@@ -120,29 +106,82 @@ function renderDuragCard(durag) {
   commentSubmitButton.textContent = 'Submit';
   commentSubmitButton.style.padding = '4px 10px';
   commentSubmitButton.style.fontSize = '12px';
-  commentSubmitButton.style.marginLeft = '4px';
+  commentSubmitButton.style.display = 'block';
+  commentSubmitButton.style.margin = '0 auto';
   commentSubmitButton.style.cursor = 'pointer';
 
   commentForm.appendChild(commentInput);
   commentForm.appendChild(commentSubmitButton);
-  
-  commentForm.addEventListener('submit', function (event) {
-    event.preventDefault();
     
+  commentForm.addEventListener('submit', function(event) {
+    event.preventDefault();
     const newCommentItem = document.createElement('li');
-    newCommentItem.textContent = `${commentInput.value}`;
+    newCommentItem.textContent = `• ${commentInput.value}`;
     newCommentItem.style.wordBreak = 'break-word';
     newCommentItem.style.marginTop = '4px';
-    
     commentList.appendChild(newCommentItem);
-
     commentForm.reset();
-  });
+    });
 
-  card.appendChild(commentForm);
-  card.appendChild(commentList);
-  
-  duragContainer.appendChild(card);
+    card.appendChild(commentForm);
+    card.appendChild(commentList);
+    
+    duragContainer.appendChild(card);
 }
 
-document.addEventListener('DOMContentLoaded', fetchDurags);
+function fetchDatabaseCollection() {
+  fetch(API_URL)
+    .then(response => response.json())
+    .then(duragsArray => {
+    buildColorWheelMenu(duragsArray);
+    })
+  .catch(error => console.error('Error fetching database collection:', error));
+}
+
+function buildColorWheelMenu(duragsArray) {
+  const rainbowContainer = document.getElementById('rainbow-preview-area');
+  const previewPlaceholder = document.getElementById('preview-placeholder');
+  const previewImage = document.getElementById('preview-image');
+
+  rainbowContainer.replaceChildren();
+
+  const trackTitle = document.createElement('h4');
+  trackTitle.textContent = "Durag's I own already!:";
+  trackTitle.style.margin = "0 0 10px 0";
+  trackTitle.style.color = "#ff8888";
+  rainbowContainer.appendChild(trackTitle);
+
+  const colorTrack = document.createElement('div');
+  colorTrack.style.display = 'flex';
+  colorTrack.style.flexWrap = 'wrap';
+  colorTrack.style.gap = '8px';
+
+  duragsArray.forEach(durag => {
+    if (!durag.selfie) {
+      return; 
+    }
+
+  const colorBtn = document.createElement('button');
+  colorBtn.className = 'color-wheel-btn';
+  colorBtn.textContent = durag.color;
+
+  colorBtn.addEventListener('mouseenter', function() {
+  previewPlaceholder.style.display = 'none';
+  previewImage.src = durag.selfie;
+  previewImage.style.display = 'block';
+  });
+
+  colorBtn.addEventListener('mouseleave', function() {
+  previewImage.src = "";
+  previewImage.style.display = 'none';
+  previewPlaceholder.style.display = 'block';
+  });
+
+  colorTrack.appendChild(colorBtn);
+  });
+
+  rainbowContainer.appendChild(colorTrack);
+}
+
+document.addEventListener('DOMContentLoaded', fetchDatabaseCollection);
+
