@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julian's Durag Collection</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="index.js"></script>
-</head>
-<body>
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julian's Durag Collection</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="index.js"></script>
+  </head>
+  <body>
 
-  <h1>Julian's Durag Rainbow!</h1>
+<h1>Julian's Durag Rainbow!</h1>
 
-  <div id="main-layout" style="display: flex; gap: 40px; align-items: flex-start;">
+<div id="main-layout" style="display: flex; gap: 40px; align-items: flex-start;">
     
-    <div id="left-column" style="flex: 1; display: flex; flex-direction: column;">
-      
-      <form id="durag-form">
-        <input id="color-input" type="text" placeholder="Enter a durag color..." required>
-        <input id="image-input" type="text" placeholder="Enter image URL..." required>
-        <button type="submit">Add Durag</button>
-      </form>
+  <div id="left-column" style="flex: 1; display: flex; flex-direction: column;">
+    
+    <form id="durag-form">
+      <input id="color-input" type="text" placeholder="Enter a durag color..." required>
+      <input id="image-input" type="text" placeholder="Enter image URL..." required>
+      <button type="submit">Add a durag!</button>
+    </form>
 
-      <div id="blurb-area" style="margin-top: 40px; color: #e5dddd; font-style: italic;">
-        <p>Julian needs your help! You need to help him complete his collection of colorful durags! The layout is pretty simlpe. You just need to find durags on google and add them to his list so he knows what to buy next! Once you found your image, copy the image address, and paste it into the image URL field. Once you hit submit, the durag you recommended will be added to his shopping list! You can like each durag to show him what you strongly recommend. Also leave a comment on what you think of the durag you uploaded if you had any additional thoughts!</p>
-      </div>
+    <div id="blurb-area" style="margin-top: 40px; color: #f1eeee; font-style: Punk Mono;">
+      <p>Julian needs your help! You need to help him complete his collection of colorful durags! The layout is pretty simple. You just need to find durags on google and add them to his list so he knows what to buy next! Once you found your image, copy the image address, and paste it into the image URL field. Once you hit submit, the durag you recommended will be added to his shopping list! You can like each durag to show him what you strongly recommend. Also leave a comment on what you think of the durag you uploaded if you had any additional thoughts!</p>
+    </div>
 
-      <div id="durag-container" style="display: flex; gap: 15px; overflow-x: auto; padding: 15px 0; white-space: nowrap; margin-top: 60px; max-width: 65vw; border: 1px dashed #444;">
-      </div>
+    <div id="durag-container" style="display: flex; gap: 15px; overflow-x: auto; padding: 15px 0; white-space: nowrap; margin-top: 60px; max-width: 65vw; border: 2px dashed #c3c2c2;">
+    </div>
 
     </div>
 
     <div id="right-column" style="width: 320px; border-left: 2px solid #444; padding-left: 20px; display: flex; flex-direction: column; gap: 20px;">
-      
-      <div>
-        <h3 style="margin-bottom: 10px;">The Collection so far!</h3>
-        <div id="preview-box" style="width: 250px; height: 250px; border: 2px dashed #aaa; display: flex; align-items: center; justify-content: center; background-color: #222; border-radius: 8px;">
-          <p id="preview-placeholder" style="margin: 0; padding: 10px; text-align: center;">Hover over a color!</p>
-          <img id="preview-image" src="" alt="Julian Selfie" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-        </div>
+    
+    <div>
+      <h3 style="margin-bottom: 10px;">The Collection so far!</h3>
+      <div id="preview-box" style="width: 250px; height: 250px; border: 2px dashed #aaa; display: flex; align-items: center; justify-content: center; background-color: #222; border-radius: 8px;">
+      <p id="preview-placeholder" style="margin: 0; padding: 10px; text-align: center;">Hover over a color!</p>
+      <img id="preview-image" src="" alt="Julian Selfie" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
       </div>
+    </div>
 
-      <div id="rainbow-preview-area" style="border: 1px dashed #555; padding: 15px; border-radius: 6px; background-color: #252525;">
-        <h4 style="margin: 0 0 8px 0; color: #ff8888;">Mouseover function</h4>
-        <p style="margin: 0; font-size: 13px; line-height: 1.4; color: #ccc;">Here for our "rainbow" of already owned durags</p>
-      </div>
+    <div id="rainbow-preview-area" style="border: 1px dashed #555; padding: 15px; border-radius: 6px; background-color: #252525;">
+      <h4 style="margin: 0 0 8px 0; color: #ff8888;">Mouseover function</h4>
+      <p style="margin: 0; font-size: 13px; line-height: 1.4; color: #ccc;">Durag's I own already!:</p>
+    </div>
 
     </div>
 
-  </div>
+</div>
 
-</body>
+  </body>
 </html>
 
