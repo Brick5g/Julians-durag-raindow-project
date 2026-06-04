@@ -1,29 +1,195 @@
 body {
-    background-color: #4d6851 !important;
-    color: #ffffff !important;
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  background-color: #121212;       
+  color: #ffffff;                  
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 30px 50px;
 }
 
-.durag-card, .durag-card p, .durag-card strong {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important; 
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, #ff7575, #212ccb, #faff6a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 10px rgba(255, 117, 140, 0.15);
+}
+
+#blurb-area p{
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, #75ffe8, #babbbf, #ffd344);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 10px rgba(255, 117, 140, 0.15);
+}
+
+#durag-form input[type="text"] {
+  padding: 10px 14px;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-right: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#durag-form input[type="text"]:focus {
+  outline: none;
+  border-color: #ff758c;
+  box-shadow: 0 0 8px rgba(255, 117, 140, 0.4);
+}
+
+#durag-form button[type="submit"] {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#durag-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 117, 140, 0.35);
 }
 
 .color-wheel-btn {
-    padding: 8px 14px;
-    background-color: #333;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 20px; /* Makes them rounded pills */
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 13px;
-    transition: all 0.2s ease;
+  padding: 6px 14px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .color-wheel-btn:hover {
-    background-color: #555;
-    transform: scale(1.05);
+  background: #ff758c;
+  color: #121212;
+  font-weight: 600;
+  border-color: #ff758c;
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(255, 117, 140, 0.5);
 }
+
+.durag-card {
+  flex-shrink: 0;
+  border: 1px solid #a8a8a8;
+  padding: 10px;                   
+  border-radius: 10px;             
+  text-align: center;
+  background-color: #c0c0c0;
+  min-width: 150px;                
+  max-width: 150px;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.durag-card-img {
+  width: 100%;                     
+  height: 120px;
+  object-fit: cover;               
+  border-radius: 6px;              
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.durag-card-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff; 
+  margin: 4px 0;
+}
+
+.durag-comment-input {
+  width: 85%;
+  padding: 5px;
+  font-size: 11px;
+  display: block;
+  margin: 0 auto 5px auto;
+  background-color: #121212;       
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+.durag-like-btn {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: 6px auto;
+  border-radius: 20px;
+  border: 1px solid #1a1a1a;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.durag-like-btn:hover {
+  background-color: #ff758c;
+  border-color: #ff758c;
+  transform: scale(1.05);
+}
+
+.durag-comment-submit {
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.durag-comment-submit:hover {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+  transform: translateY(-1px);
+}
+
+.durag-comment-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.durag-comment-list li {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 6px;
+  word-break: break-word;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+  border-left: 3px solid #ff758c;
+}
+
 

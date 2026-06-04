@@ -26,3 +26,7 @@
 
 ### Will also implement a scroll function just in case someone wants to upload 100 photos at once. Instead of infinite scrolling up and down, we can scroll left & right to see what others have added already.
 
+## Feature 7 -Delete button
+
+### As a user, let's say I uploaded an image of a durag that I don't like and want to get rid of it. There will be a button to delete a durag card if you change your mind!
+
