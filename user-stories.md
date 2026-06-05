@@ -1,5 +1,12 @@
 # Web Concept: Help Julian Complete His Durag Collection
 
+## Core Features:
+
+* Enter a color and paste the image address of a durag you found 
+* Each durag that is submitted will load onto the page
+* User will be able to comment & like their uploads to give Julian a better idea of what he should buy next
+* Mouseover function on the "rainbow" to preview what durags Julian has already 
+
 ## Stories
 
 ## Feature 1 - Add images of different color durags to the collection
