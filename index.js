@@ -37,7 +37,7 @@ function renderUserGalleryCard(durag) {
   card.className = 'durag-card';
 
   const img = document.createElement('img');
-  img.src = durag.imageUrl || durag.image;
+  img.src = durag.imageUrl || durag.image || durag.selfie;
   img.alt = `${durag.color} Card`;
   img.className = 'durag-card-img';
   card.appendChild(img);
@@ -96,9 +96,7 @@ function fetchDatabaseCollection() {
     .then(duragsArray => {
       duragContainer.replaceChildren();
       duragsArray.forEach(durag => {
-        if (!durag.selfie) {
-          renderUserGalleryCard(durag);
-        }
+        renderUserGalleryCard(durag); 
       });
       buildColorWheelMenu(duragsArray);
     })

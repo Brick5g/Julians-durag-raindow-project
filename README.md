@@ -12,6 +12,8 @@
 
 * Use command json-server --watch public/db.json to start the server
 
+* Run code . to open the file!
+
 ## Instructions
 
 * In an new terminal run the command open index.html to open the website
