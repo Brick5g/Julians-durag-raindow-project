@@ -8,11 +8,13 @@
 
 * Clone the repo with the SSH key selected with the command 'git clone git@github.com:Brick5g/Julians-durag-raindow-project.git'
 
-* Run: npm install -g json-server
+* Navigate to the project by using cd Julians-durag-raindow-project
+
+* Run: npm install -g json-server or just npm install
 
 * Use command json-server --watch public/db.json to start the server
 
-* Run code . to open the file!
+* Run code . in a new terminal using 'command t' to open the file!
 
 ## Instructions
 

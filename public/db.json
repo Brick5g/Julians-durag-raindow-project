@@ -41,6 +41,13 @@
       "name": "Red Durag",
       "color": "Red",
       "selfie": "http://localhost:3000/images/IMG_4727.jpg"
+    },
+    {
+      "color": "Black & Red",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS2Fg9km8mHhmbMLxSh3F74Yyc3iz2H-bZJFvgT1hWfWaTmRBMgy1KaGyOpTvR0H5elHcSXlGariRpEKn5qVZb1ma0Uyn8Eeqw7yENMpPA40wYocxwNRc4Zy_ZHS2OjcTN8p6TloYc&usqp=CAc",
+      "name": "Black & Red Durag",
+      "id": "siTCDlkyk_M"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
