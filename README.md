@@ -10,7 +10,7 @@
 
 * Run: npm install -g json-server
 
-* Use command --watch public/db.json to start the server
+* Use command json-server --watch public/db.json to start the server
 
 ## Instructions
 
