@@ -94,10 +94,7 @@ function fetchDatabaseCollection() {
   fetch(API_URL)
     .then(response => response.json())
     .then(duragsArray => {
-      duragContainer.replaceChildren();
-      duragsArray.forEach(durag => {
-        renderUserGalleryCard(durag); 
-      });
+      duragContainer.replaceChildren(); 
       buildColorWheelMenu(duragsArray);
     })
     .catch(error => console.error('Error fetching database collection:', error));
